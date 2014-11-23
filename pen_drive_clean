@@ -1,0 +1,11 @@
+//Run the below command to format the usb to fat32 filesystem from terminal,
+
+$ sudo su
+$ fdisk -l 
+//(this helps to discovers you pendrive /dev/sdxx)
+
+$ umount /dev/sdxx
+//format device to FAT32
+
+$ mkdosfs -F 32 -I /dev/sdxx
+//Where xx is from command fdisk -l which denotes your usb drive's last letters.
