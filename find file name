@@ -1,0 +1,3 @@
+$ find <Folder/partition name > f -iname "*<filename part>*"
+
+iname - search based on file name, case insensitive
