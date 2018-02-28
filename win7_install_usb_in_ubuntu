@@ -16,6 +16,24 @@
     - Type 'p' and 'ENTER' to print current partition
     - Type 'd' and then type 'ENTER' for each partition, to delete all current partition
     - Type 'n' and 'ENTER', Then type 'p' and 'ENTER' and then type '1' and the type 'ENTER' for 'three' times
-    - Type 't' and 'ENTER', (Partition 1 will selected as )
- 
+    - Type 't' and 'ENTER', (Partition 1 will selected automaticallty since it is the only partition ) then type '7' and 
+        'ENTER' to change the type to HPFS/NTFS/exFAT
+    - Type 'a' and 'ENTER'. Type '1' and 'ENTER' to turn on the 'Boot' flag.
+    - Verify the modifications :
+        - Type 'p' and 'ENTER' and make sure 'Boot' column has asterisk(*) symbol and 'id' column has '7'
+     - Finally, type 'w' and Enter to write the modifications
+     
+   
+3. Format the new partition on USB as NTFS
+  
+  a. Install Linux NTFS userspace driver
+    $ sudo apt-get install ntfs-3g
+  
+  b. Format partition as NTFS
+    $ sudo mkfs.ntfs -f /dev/sdx1
+  
+4. Inorder to install Master Boot Record (MBR) use 'ms-sys'
+  
+  a. For installing 'ms-sys', the source has to be downloaded and it has to be compiled.
+  
   
