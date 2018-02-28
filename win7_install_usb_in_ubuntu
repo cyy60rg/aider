@@ -1,0 +1,21 @@
+1. Plug in the USB
+  // USB mostly automounts   
+  
+  a. Identify the Device ID of the USB
+  $ df -h
+  
+  b. umount the usb
+  $ sudo umount /dev/sdx
+
+2. Partition the disk(USB)
+
+  a. Use 'fdisk', 'fdisk' is better than 'parted'
+  $ sudo fdisk /dev/sdx
+    - Shell will be spawned
+    
+    - Type 'p' and 'ENTER' to print current partition
+    - Type 'd' and then type 'ENTER' for each partition, to delete all current partition
+    - Type 'n' and 'ENTER', Then type 'p' and 'ENTER' and then type '1' and the type 'ENTER' for 'three' times
+    - Type 't' and 'ENTER', (Partition 1 will selected as )
+ 
+  
