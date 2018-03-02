@@ -1,0 +1,24 @@
+// ref: https://help.dreamhost.com/hc/en-us/articles/115000218612-Installing-a-custom-version-of-Python
+
+Dowload the python from the site
+url: https://www.python.org/downloads/
+
+GoTo 'Downloads' folder
+
+Extract the tar.gz file
+  $ tar xvf Python<version>.tar.gz
+
+Change dir
+  $ cd Python<version>
+
+Configure, Compile, and then Install (This wiil install new python locally - '/opt/python<version>')
+  $ ./configure --prefix=$HOME/opt/python<version>
+  $ make
+  $ make install
+
+Enable it to current shell
+$ export PATH=$PATH:$HOME/opt/python<version>/bin
+
+Enable it to all shells of the current user, put the above line in '~/.bash_profile'
+$ source ~/.bash_profile
+  
