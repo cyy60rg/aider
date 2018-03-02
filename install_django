@@ -1,0 +1,9 @@
+// ref: https://help.dreamhost.com/hc/en-us/articles/215317948-How-to-install-Django-using-virtualenv
+
+Install using pip
+  $ pip install Django
+  
+Install clients like client for mysql (if necessary)
+  $ pip install mysqlclient
+ 
+You can install django in virtual env by activate it and run the above commands
