@@ -1,0 +1,31 @@
+ref: https://help.dreamhost.com/hc/en-us/articles/215489338-Installing-and-using-Python-s-virtualenv
+
+Install 'pip' and other necessary ones
+  $ sudo apt-get install python-pip python-dev build-essential
+  $ sudo pip install --upgrade pip 
+  $ sudo pip install --upgrade virtualenv 
+
+It is possible to create virtual env for a local user python and a system installed python
+
+Make a dir for the environment (where all the files needed will be copied)
+  $ mkdir pythn_virtenv
+ 
+Goto the dir
+  $ cd python_virtenv
+
+Create the virtual env (if you use python then the system installed(if the python path is not changed in bash profile file))
+  $ virtualenv -p python <proj_name>
+    
+Activate env
+  $ source <proj_name>/bin/activate
+  // Now a shell will be there with the name of the project
+
+To deactivate 
+  $ deactivate
+  
+To remove
+  $ rm -rf <pathToFolder>/<proj_name>/
+
+
+
+  
