@@ -1,0 +1,38 @@
+To send mail using smtp
+
+1. Connect to smtp server
+    a. Use telnet (without tls)
+    $ telnet smtp.office365.com 587
+    
+    b. Using encrypted connection
+    $ openssl s_client -debug -starttls smtp -crlf -connect smtp.office365.com:587
+    
+2. Send hello to the smtp server
+$ ehlo smtp.office365.com
+
+3. Tell server for authentication
+$ AUTH LOGIN
+       <Authentication type>
+       
+4. Then the server returns a message like this "334 VXNlcm5hbWU6;". It is base64 encoded string asking for your username
+    Provide the username in base64
+
+5. Then the server returns another message "334 UGFzc3dvcmQ6;" which is the base64 encoded string asking for password
+    Provide the password in base64
+
+6. If the username and password is correct then it will return "250  Authentication successful" 
+
+7. Then type the mail
+mail from: mailfrom@anywhere.com
+
+rcpt to: mailto@anywhere.com
+
+data
+Subject: Re: Some issue
+
+Sounds good!
+.
+quit
+
+-> some times there will an error like "Client does not have permissions to send as this sender"
+It is beacause of the username and mail id from is different 
