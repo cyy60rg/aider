@@ -1,0 +1,30 @@
+SSH keys are pressent in ~/.ssh/<filename>.pub
+Check for any key files
+$ ls ~/.ssh/
+
+For new ssh key for gitlab login
+$ ssh-keygen -t rsa -C "your.email@example.com" -b 4096
+  Asks for name of the key, give the full path as specified with name of the key file
+  like, /home/name/.ssh/<key_file_name>
+  Will ask for passphrase (Nothing is enough)
+  
+$  xclip -sel clip < ~/.ssh/<key_file_name, eg: id_rsa_sample_name).pub
+Command will copy it to the clipboard so that you can paste it on the gitlab web interface.
+
+Go to Profile->Settings->SSH Keys
+Paste the key and add the key with a appropriate name
+
+Open /home/name/.ssh/config, add (u can add one more entry for local git repo if you have otherwise you don't have to)
+ #Local server
+  Host gitlab.localserver.com
+  User git
+  Port 5022
+  IdentityFile /home/name/.ssh/id_rsa
+
+ #Remote server
+  Host gitlab.com
+  User git
+  PreferredAuthentications publickey
+  IdentityFile /home/name/.ssh/id_rsa_remo_gitlab
+  
+ 
